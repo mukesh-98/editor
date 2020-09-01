@@ -52,8 +52,16 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
+import SimpleUploadAdapter from "@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter";
+import ImageUploadEditing from "@ckeditor/ckeditor5-image/src/imageupload/imageuploadediting";
+import ImageUploadProgress from "@ckeditor/ckeditor5-image/src/imageupload/imageuploadprogress";
+import ImageUploadUI from "@ckeditor/ckeditor5-image/src/imageupload/imageuploadui";
+import {CloudinaryImageUploadAdapter} from "ckeditor-cloudinary-uploader-adapter";
 
-class Editor extends ClassicEditor {}
+
+
+class Editor extends ClassicEditor {
+}
 
 // Plugins to include in the build.
 Editor.builtinPlugins = [
@@ -80,6 +88,9 @@ Editor.builtinPlugins = [
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
+  ImageUploadEditing,
+  ImageUploadProgress,
+  ImageUploadUI,
 	Indent,
 	IndentBlock,
 	Italic,
@@ -105,8 +116,11 @@ Editor.builtinPlugins = [
 	TableToolbar,
 	TextTransformation,
 	Underline,
-	Base64UploadAdapter
-	
+	Base64UploadAdapter,
+  SimpleUploadAdapter,
+  this.imagePluginFactory(editor),
+
+
 ];
 
 export default Editor;

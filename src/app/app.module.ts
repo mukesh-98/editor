@@ -3,12 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EditorComponent } from './editor/editor.component';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditorComponent
   ],
   imports: [
+    CKEditorModule,
     BrowserModule,
     AppRoutingModule
   ],
